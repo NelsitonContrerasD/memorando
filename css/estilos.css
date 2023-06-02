@@ -1,0 +1,102 @@
+body {
+  background-color: #222;
+  overflow: hidden;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  animation: animateBackground 10s linear infinite;
+}
+
+@keyframes animateBackground {
+  0% {
+      background-color: #6a3ce7;
+  }
+  25% {
+      background-color: #3498db;
+  }
+  50% {
+      background-color: #2ecc71;
+  }
+  75% {
+      background-color: #f10f0f;
+  }
+  100% {
+      background-color: #6a3ce7;
+  }
+}
+
+#titulo {
+  text-align: center;
+  font-family: Impact;
+}
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  max-width: 400px;
+  margin: 50px auto;
+  
+}
+
+figure {
+  perspective: 1000px;
+  text-align: center;
+  position: relative;
+  height: 100px;
+  perspective: 1000px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carta.flip {
+  transform: rotateY(180deg);
+}
+
+
+.pe1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.puntaje {
+  background: rgb(140, 0, 0);
+  background: linear-gradient(90deg, rgba(140, 0, 0, 0.3617822128851541) 0%, rgba(0, 14, 255, 0.36458333333333337) 65%);
+  text-align: center;
+  border-radius: 20px;
+  border: solid 2px #ccc;
+  height: 100px;
+  color: white;
+  font-size: 24px;
+  line-height: 100px;
+}
+
+.vidas {
+  text-align: center;
+  border-radius: 20px;
+  border: solid 2px #ccc;
+  height: 100px;
+  color: white;
+  font-size: 24px;
+  line-height: 100px;
+}
+
+footer {
+  text-align: center;
+}
