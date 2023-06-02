@@ -2,10 +2,69 @@ body {
   background-color: #222;
   overflow: hidden;
 }
-img{
-  max-width: 100%;
-  max-height: 100%;
+figure,
+figure img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
+
+figure {
+  
+  height: 100px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+    position: relative;
+    transition: all ease .5s;
+    transform-style: preserve-3d;
+    transform: perspective(600px) rotateY(0deg);
+    cursor: pointer;
+    box-shadow: 3px 3px 16px rgb(0, 0, 0, 0.6);
+}
+
+figure::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 97, 91, 0);
+    transition: 0.3s all ease;
+}
+
+figure:hover:after {
+    background: rgba(108, 236, 34, 0.137);
+}
+
+figure.opened {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+figure .back {
+    display: block;
+    backface-visibility: hidden;
+}
+
+figure .searched-image {
+    position: absolute;
+    top: 0;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+
+
+
+
+
+
 
 .background {
   position: fixed;
@@ -41,21 +100,19 @@ img{
   font-family: Impact;
 }
 
-.tablero {
+.board-game {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
-  max-width: 400px;
+  max-width: 500px;
   margin: 50px auto;
   
 }
 
 figure {
-  perspective: 1000px;
   text-align: center;
   position: relative;
   height: 100px;
-  perspective: 1000px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
   cursor: pointer;
